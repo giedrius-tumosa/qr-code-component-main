@@ -1,0 +1,115 @@
+/* || RESET */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* || UTILITY CLASSES */
+
+.offscreen {
+  position: absolute;
+  left: 10000px;
+}
+.nowrap {
+  white-space: nowrap;
+}
+
+/* || VARIABLES */
+
+:root {
+  /* Colors */
+  --clr-primary-100: hsl(0, 0%, 100%);
+  --clr-primary-200: hsl(212, 45%, 89%);
+  --clr-primary-300: hsl(220, 15%, 55%);
+  --clr-primary-400: hsl(218, 44%, 22%);
+
+  --clr-body-bg: var(--clr-primary-200);
+  --clr-card-bg: var(--clr-primary-100);
+  --clr-heading-font: var(--clr-primary-400);
+  --clr-body-font: var(--clr-primary-300);
+
+  /* Fonts */
+  --ff: "Outfit", sans-serif;
+  --fs-body: 1rem;
+  --fs-headings: 1.4rem;
+  --fw-body: 400;
+  --fw-headings: 700;
+  --line-height: 1.5;
+
+  /* General */
+  --padding: 1rem;
+  --padding-inline: 0.5rem;
+  --padding-body: 0.3125rem;
+  --border-radius-m: 15px 15px 15px 15px;
+  --border-radius-s: 10px 10px 10px 10px;
+}
+
+/* || LAYOUT AND SIZES*/
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding-body);
+}
+.card {
+  width: 320px;
+  height: 500px;
+  padding: var(--padding);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+.card__figure {
+  width: 100%;
+}
+.info {
+  text-align: center;
+  display: flex;
+  gap: 1rem;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+
+/* || GENERAL STYLES */
+
+body {
+  background-color: var(--clr-body-bg);
+}
+.card {
+  background-color: var(--clr-card-bg);
+  border-radius: var(--border-radius-m);
+}
+.card__figure img {
+  border-radius: var(--border-radius-s);
+}
+
+/* || TYPOGRAPHY */
+body {
+  font-family: var(--ff);
+}
+.info__heading {
+  font-weight: var(--fw-headings);
+  font-size: var(--fs-headings);
+  color: var(--clr-heading-font);
+}
+.info__text {
+  font-weight: var(--fw-body);
+  font-size: var(--fs-body);
+  color: var(--clr-body-font);
+  padding-inline: var(--padding-inline);
+}
